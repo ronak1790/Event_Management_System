@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Event Management System</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!--body start -->
+    <div id="main">
+        <!--left part start -->
+        <div id="left">
+            <img src="images/imagest.jpg" alt="goal" border="5" class="logo" title="goal" /></a>
+            <ul>
+                <li>
+                    <img src="images/imageqs.jpg" alt="goal" border="5" class="logo" title="goal" /></li>
+                <%--<li><img src="images/login_icon.gif" alt="goal"  border="0" class="logo" title="goal" /></li>--%>
+                <li><a href="Adminlogin.aspx">
+                    <img src="images/imagelock.jpg" alt="goal" border="5" class="logo" title="goal" />
+                </a></li>
+            </ul>
+            <br class="spacer" />
+        </div>
+        <!--left part end -->
+        <!--mid part start -->
+        <div id="mid">
+            <ul class="midlink1">
+                <h2 class="ser">
+                    <a href="adminhome.aspx">Home</a></h2>
+            </ul>
+            <ul class="midlink1">
+                <h2 class="ser">
+                    Event</h2>
+                <li><a href="admincategory.aspx">Category</a></li>
+                <li><a href="adminsubcategory.aspx">Sub-Category</a></li>
+            </ul>
+            <ul class="midlink1">
+                <h2 class="ser">
+                    Item</h2>
+                <li><a href="adminitem.aspx">Item</a></li>
+                <li><a href="adminsubitem.aspx">Sub-Item</a></li>
+                 <li><a href="adminsubitem2.aspx">Sub-Item Detail</a></li>
+            </ul>
+             <ul class="midlink1">
+                <h2 class="ser">
+                    Package</h2>
+                <li><a href="adminpackage.aspx">Package Master</a></li>
+                <li><a href="adminpackageDetail.aspx">Package Detail</a></li>
+                <li><a href="adminpackageassign.aspx">Assign Package</a></li>
+            </ul>
+            
+            <ul>
+                <h2 class="ser">
+                    Photo Gallary</h2>
+            </ul>
+            <ul class="midlink1">
+                <li><a href="adminphotoupload.aspx">Upload Photo</a></li>
+                <li><a href="adminphotodelete.aspx">Delete Photo</a></li>
+            </ul>
+            <ul class="midlink1">
+                <h2 class="ser">
+                    Password</h2>
+                <li><a href="adminchangepassword.aspx">Change Password</a></li>
+            </ul>
+            <ul class="midlink1">
+                <h2 class="ser">
+                    <a href="admincontactus.aspx">Contact Us</a></h2>
+            </ul>
+            <ul class="midlink1">
+                <h2 class="ser">
+                    <a href="adminNews.aspx">News</a></h2>
+            </ul>
+            <ul class="midlink1">
+                <h2 class="ser">
+                    <a href="adminregistrationpage.aspx">Client Detail</a></h2>
+            </ul>
+            
+            <ul class="midlink1">
+                <h2 class="ser">
+                    <a href="adminbookingdetails.aspx">Booking Detail</a></h2>
+            </ul>
+            <ul class="midlink1">
+                <h2 class="ser">
+                    <a href="adminlogout.aspx">Logout</a></h2>
+            </ul>
+            <br class="spacer" />
+        </div>
+        <!--mid part end -->
+        <!--right part start -->
+        <div id="right">
+            <ul class="top">
+
+            
+                <li><a><asp:Label ID="Label1" runat="server" Text="Welcome"></asp:Label></a></li>
+                <li><a><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label></a></li>
+            </ul>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--right part end -->
+        <br class="spacer" />
+    </div>
+    <!--body end -->
+    <!--footer start -->
+    <%--<div id="footerMain">
+	
+  <div id="footer"> 
+    <ul>
+      <li><a href="#">Our Productions</a>| </li>
+      <li><a href="#">Survices Overview</a>| </li>
+      <li><a href="#">Whta Our Goals</a>| </li>
+      <li><a href="#">Important</a>| </li>
+      <li><a href="#">Latest News And Events</a>| </li>
+      <li><a href="#">Blogs</a>| </li>
+      <li><a href="#">Client’s Testimonials</a></li>
+    </ul>
+    <p class="copyright">Copyright © Goal 20XX. All Rights Reserved.</p>
+    <a href="http://validator.w3.org/check?uri=referer" class="xhtml"></a> <a href="http://jigsaw.w3.org/css-validator/check/referer" class="css"></a> 
+    <p class="design">Designed by : <a href="http://www.templateworld.com/" target="_blank" class="link">TemplateWorld</a></p>
+  </div>
+</div>--%>
+    <!--footer end -->
+    </form>
+</body>
+</html>

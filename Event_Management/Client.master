@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Client.master.cs" Inherits="Client" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Event Management System</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!--body start -->
+    <div id="main">
+        <!--left part start -->
+        <div id="left">
+            <img src="images/imagest.jpg" alt="goal" border="5" class="logo" title="goal" /></a>
+            <ul>
+                <li>
+                    <img src="images/jewelry.jpg" alt="goal" border="5" class="logo" title="goal" /></li>
+                <li>
+                    <img src="images/press-conference.jpg" alt="goal" border="5" class="logo" title="goal" /></li>
+                <li>
+                    <img src="images/catering.jpg" alt="goal" border="5" class="logo" title="goal" />
+                    </a></li>
+            </ul>
+            <br class="spacer" />
+        </div>
+        <!--left part end -->
+        <!--mid part start -->
+        <div id="mid">
+            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" Width="100%"
+                GridLines="None">
+                <Columns>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <ul class="midlink1">
+                                <h2 class="ser">
+                                    <%# DataBinder.Eval(Container.DataItem,"Cat_Name") %></h2>
+                                <li>
+                                    <asp:Repeater ID="Repeater1" runat="server" DataSource='<%#DataBinder.Eval(Container, "DataItem.InnerVal") %>'>
+                                        <ItemTemplate>
+                                            <div>
+                                                <a href="SubDetail.aspx?Id=<%# DataBinder.Eval(Container.DataItem,"SubCat_id") %>">
+                                                    <%# DataBinder.Eval(Container.DataItem,"subcat_name") %></a>
+                                            </div>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </li>
+                            </ul>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+            <ul class="midlink1">
+                <h2 class="ser">
+                    <a href="photogallary.aspx">Photo Gallary</a>
+                </h2>
+            </ul>
+            <ul id="ul" runat="server" class="midlink1">
+                <h2 class="ser">
+                    <a href="clientlogout.aspx">Logout</a>
+                </h2>
+            </ul>
+            <h2 class="story">
+                News</h2>
+            <marquee onmouseover="stop()" onmouseout="start()" direction="up" height="200" scrollamount="2">
+            
+            <p><strong> <asp:DataList ID="dl" runat="server" DataKeyField="news_id" RepeatColumns="1" RepeatDirection="Vertical">
+            
+            <ItemTemplate>
+            <ul class="midlink3">
+            
+            <li><%# Eval("NewsDate") %></li>
+            <li> <%# Eval("news_title") %><a href="newsdetail.aspx"><%# Eval("Description") %></a></li>
+            
+            </ul>                                               
+            </ItemTemplate>
+            </asp:DataList></strong>
+            </p>
+            </marquee>
+            </ul>
+        </div>
+        <!--mid part end -->
+        <!--right part start -->
+        <div id="right">
+                          
+
+            <ul class="top">
+                <li><a href="Default.aspx">Home</a></li>
+                <li><a href="clientaboutus.aspx">Contact us</a></li>
+                <li class="noMargin"><a href="clientlogin.aspx">Join Us </a></li>
+            </ul>
+       
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--right part end -->
+        <br class="spacer" />
+    </div>
+    <!--body end -->
+    <!--footer start -->
+    <div id="footerMain">
+        <div id="footer">
+            <ul>
+                <li><a href="Default.aspx">Home</a>| </li>
+                <li><a href="clientlogin.aspx">Join Us</a>|</li>
+                <li><a href="clientaboutus.aspx">Contact Us</a>| </li>
+                <li><a href="photogallary.aspx">Photo Gallary</a>| </li>
+                <li><a href="newsdetail.aspx">News</a>| </li>
+                <li><a href="#">Blogs</a>| </li>
+                <li><a href="#">Client’s Testimonials</a></li>
+            </ul>
+            <p class="copyright">
+                Copyright © 2012. All Rights Reserved.</p>
+            <p class="design">
+                Designed by :ColdFire Group</a></p>
+        </div>
+    </div>
+    <!--footer end -->
+    </form>
+</body>
+</html>
